@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "decentralize_cdn_icp_backend": {
+      "main": "src/decentralize_cdn_icp_backend/main.mo",
+      "type": "motoko"
+    },
+    "decentralize_cdn_icp_frontend": {
+      "dependencies": [
+        "decentralize_cdn_icp_backend"
+      ],
+      "source": [
+        "src/decentralize_cdn_icp_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "decentralize_cdn_icp_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
