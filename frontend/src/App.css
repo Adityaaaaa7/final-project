@@ -1,0 +1,63 @@
+/* Centering root content */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: transform 300ms ease, filter 300ms ease;
+  will-change: filter, transform;
+}
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #00ffffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 15px #61dafb);
+}
+
+/* Logo spinning animation */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .logo-spin {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card styling */
+.card {
+  padding: 2em;
+  margin: 1rem auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Doc link style */
+.read-the-docs {
+  color: #cccccc;
+  font-style: italic;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+.read-the-docs:hover {
+  color: #ffffff;
+}
