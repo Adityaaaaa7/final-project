@@ -174,7 +174,7 @@ export default function App() {
 
       {/* FOOTER */}
       <div className="bg-black text-white py-8 px-6 text-center">
-        <p className="mb-2">Github: <a href="#" className="underline">https://github.com/Adityaaaaa7/final_pro</a></p>
+        <p className="mb-2">Github: <a href="#" className="underline">https://github.com/Adityaaaaa7/final-project</a></p>
         <p className="mb-2">LinkedIn: <a href="#" className="underline">https://www.linkedin.com/in/aditya-verma-ba0920356/</a></p>
       </div>
     </div>
