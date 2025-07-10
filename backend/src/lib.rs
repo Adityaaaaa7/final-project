@@ -1,26 +1,20 @@
-use ic_cdk::api::stable::StableWriter;
-use ic_cdk_macros::*;
-use std::collections::HashMap;
+use candid::{candid_method};
+use std::cell::RefCell;
 
-static mut FILES: Option<HashMap<String, Vec<u8>>> = None;
-
-#[init]
-fn init() {
-    unsafe { FILES = Some(HashMap::new()) }
+thread_local! {
+    static FILE_STORAGE: RefCell<Option<Vec<u8>>> = RefCell::new(None);
 }
 
-#[update]
-fn upload_file(name: String, data: Vec<u8>) {
-    unsafe {
-        if let Some(files) = FILES.as_mut() {
-            files.insert(name, data);
-        }
-    }
+#[ic_cdk::update]
+#[candid_method(update)]
+fn upload_file(data: Vec<u8>) {
+    let data_len = data.len();
+    FILE_STORAGE.with(|f| *f.borrow_mut() = Some(data.clone()));
+    ic_cdk::println!("File uploaded! Size: {}", data_len);
 }
 
-#[query]
-fn get_file(name: String) -> Option<Vec<u8>> {
-    unsafe {
-        FILES.as_ref()?.get(&name).cloned()
-    }
+#[ic_cdk::query]
+#[candid_method(query)]
+fn get_file() -> Option<Vec<u8>> {
+    FILE_STORAGE.with(|f| f.borrow().clone())
 }

@@ -1,0 +1,4 @@
+service : {
+  upload_file: (blob) -> ();
+  get_file: () -> (blob);
+}

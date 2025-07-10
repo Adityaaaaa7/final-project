@@ -168,14 +168,14 @@ export default function App() {
         <ul className="list-disc list-inside space-y-1">
           <li>This app showcases a decentralized content delivery network (CDN)</li>
           <li>Built using React, Tailwind CSS, and Framer Motion</li>
-          <li>Files will be uploaded to ICP backend (coming next!)</li>
+          <li>Files will be uploaded to ICP backend</li>
         </ul>
       </div>
 
       {/* FOOTER */}
       <div className="bg-black text-white py-8 px-6 text-center">
-        <p className="mb-2">Github: <a href="#" className="underline">example link</a></p>
-        <p className="mb-2">LinkedIn: <a href="#" className="underline">example link</a></p>
+        <p className="mb-2">Github: <a href="#" className="underline">https://github.com/Adityaaaaa7/final_pro</a></p>
+        <p className="mb-2">LinkedIn: <a href="#" className="underline">https://www.linkedin.com/in/aditya-verma-ba0920356/</a></p>
       </div>
     </div>
   );

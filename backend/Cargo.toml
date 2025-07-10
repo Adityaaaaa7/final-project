@@ -1,6 +1,12 @@
 [package]
 name = "backend"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
 
 [dependencies]
+candid = "0.10.5"
+ic-cdk = "0.13.1"
+ic-cdk-macros = "0.13.1"

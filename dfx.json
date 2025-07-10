@@ -1,10 +1,28 @@
 {
   "canisters": {
-  "cdn_backend": {
-    "type": "custom",
-    "candid": "backend/target/wasm32-unknown-unknown/debug/cdn_backend.did",
-    "wasm": "backend/target/wasm32-unknown-unknown/debug/cdn_backend.wasm",
-    "build": "cd backend && cargo build --target wasm32-unknown-unknown"
-  }
-}
+    "backend": {
+      "type": "custom",
+      "candid": "backend/src/backend.did",
+     "wasm": "backend/target/wasm32-unknown-unknown/debug/backend.wasm",
+      "build": "sh -c 'cd backend && cargo build --target wasm32-unknown-unknown'"
+   },
+    "frontend": {
+      "type": "assets",
+      "source": ["frontend/dist"],
+      "build": "sh -c 'cd frontend && npm run build'"
+   }
+ },
+  "defaults": {
+    "build": {
+      "output": "src"
+    }
+  },
+  "dfx": "0.17.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
 }
